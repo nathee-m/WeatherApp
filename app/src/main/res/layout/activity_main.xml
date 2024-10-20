@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/CorAzulFundo"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -14,14 +15,25 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            app:title="The Weather App"
             app:titleTextColor="@color/corPreto"
             android:background="@color/CorBranco"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jockey_one_regular"
+            android:text="THE WEATHER APP"
+            android:textColor="@color/corPreto"
+            android:textSize="20dp"
+            android:layout_gravity="left" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
 
     </com.google.android.material.appbar.AppBarLayout>
-    
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -30,6 +42,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/qr_24dp"/>
+        android:backgroundTint="@color/CorAzulApp"
+        android:src="@drawable/qr_24dp_ffffff"
+        android:tint="@color/CorBranco" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
