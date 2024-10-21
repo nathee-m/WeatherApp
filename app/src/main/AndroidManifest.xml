@@ -22,15 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".TabsActivity"
+            android:name=".MainActivity"
+            android:exported="true"
             android:theme="@style/Theme.MyApplication">
         </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
+            android:name=".TabsActivity"
             android:theme="@style/Theme.MyApplication">
         </activity>
 

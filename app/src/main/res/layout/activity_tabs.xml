@@ -13,19 +13,21 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            app:titleTextColor="@color/corPreto"
-            android:background="@color/CorBranco"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/CorBranco"
+            app:titleTextColor="@color/corPreto">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="THE WEATHER APP"
                 android:textColor="@color/corPreto"
-                android:textSize="20dp"
-                android:layout_gravity="left" />
+                android:textSize="20dp" />
+
+
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -33,7 +35,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/CorAzulApp"/>
+            android:backgroundTint="@color/CorAzulApp" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

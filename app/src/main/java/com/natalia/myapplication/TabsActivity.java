@@ -43,4 +43,7 @@ public class TabsActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

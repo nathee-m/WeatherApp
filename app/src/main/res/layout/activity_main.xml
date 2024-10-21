@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/CorAzulFundo"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -15,35 +15,33 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            app:titleTextColor="@color/corPreto"
-            android:background="@color/CorBranco"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/CorBranco"
+            app:titleTextColor="@color/corPreto">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/jockey_one_regular"
-            android:text="THE WEATHER APP"
-            android:textColor="@color/corPreto"
-            android:textSize="20dp"
-            android:layout_gravity="left" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/jockey_one_regular"
+                android:text="THE WEATHER APP"
+                android:textColor="@color/corPreto"
+                android:textSize="20dp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
-
     </com.google.android.material.appbar.AppBarLayout>
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <Button
+        android:id="@+id/ButtonIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="400dp"
         android:backgroundTint="@color/CorAzulApp"
-        android:src="@drawable/qr_24dp_ffffff"
-        android:tint="@color/CorBranco" />
+        android:text="INICIAR"
+        android:textColor="@color/CorBranco"
+        android:textSize="25dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
