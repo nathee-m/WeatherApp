@@ -29,8 +29,6 @@
                 android:textColor="@color/corPreto"
                 android:textSize="24dp" />
 
-
-
         </com.google.android.material.appbar.MaterialToolbar>
 
         <com.google.android.material.tabs.TabLayout
