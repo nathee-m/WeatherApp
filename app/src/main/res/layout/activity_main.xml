@@ -27,7 +27,7 @@
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="THE WEATHER APP"
                 android:textColor="@color/corPreto"
-                android:textSize="20dp" />
+                android:textSize="24dp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 

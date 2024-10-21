@@ -7,6 +7,7 @@
     <string name="title_activity_tabs">TabsActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="Sobre">Este aplicativo foi desenvolvido por Natália Diogo como parte da Atividade Prática Orientada (APO) da disciplina de Programação de Dispositivos Móveis, do curso de Análise e Desenvolvimento de Sistemas da UniparEAD.</string>
 
 
 </resources>

@@ -1,5 +1,6 @@
 package com.natalia.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,8 +43,18 @@ public class TabsActivity extends AppCompatActivity {
                         .setAnchorView(R.id.fab).show();
             }
         });
-    }
 
+        FloatingActionButton fabInicio = findViewById(R.id.fab2);
+        fabInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TabsActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+    }
 
 
 }
