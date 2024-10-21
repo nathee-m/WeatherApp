@@ -35,13 +35,13 @@
 
     <Button
         android:id="@+id/ButtonIniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="430dp"
         android:backgroundTint="@color/CorAzulApp"
         android:text="INICIAR"
         android:textColor="@color/CorBranco"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
