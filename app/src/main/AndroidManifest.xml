@@ -16,7 +16,7 @@
             android:name=".SobreActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.MyApplication">
             <intent-filter>
