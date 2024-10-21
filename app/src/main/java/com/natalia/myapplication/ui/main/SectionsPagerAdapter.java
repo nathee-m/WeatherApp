@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.natalia.myapplication.MapsFragment;
 import com.natalia.myapplication.R;
 
 /**
@@ -27,7 +28,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return PlaceholderFragment.newInstance(position + 1);
+
+        switch (position) {
+            case 2: {
+                return new MapsFragment();
+
+            }
+            default: {
+                return PlaceholderFragment.newInstance(position + 1);
+            }
+        }
+
     }
 
     @Nullable
