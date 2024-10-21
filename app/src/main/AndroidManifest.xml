@@ -28,10 +28,14 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MyApplication"></activity>
+            android:theme="@style/Theme.MyApplication">
+
+        </activity>
         <activity
             android:name=".TabsActivity"
-            android:theme="@style/Theme.MyApplication"></activity>
+            android:theme="@style/Theme.MyApplication">
+
+        </activity>
     </application>
 
 </manifest>
