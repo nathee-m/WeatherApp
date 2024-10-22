@@ -28,12 +28,12 @@ public class MapsFragment extends Fragment {
         mapView = rootView.findViewById(R.id.map);
         mapView.setTileSource(TileSourceFactory.MAPNIK);
         mapView.setMultiTouchControls(true);
-        mapView.getController().setZoom(15.0);
-        mapView.getController().setCenter(new GeoPoint(48.8588443, 2.2943506));
+        mapView.getController().setZoom(18.0);
+        mapView.getController().setCenter(new GeoPoint(-23.56834, -46.71717));
 
         Marker marker = new Marker(mapView);
-        marker.setPosition(new GeoPoint(48.8588443, 2.2943506)); // Exemplo: Torre Eiffel
-        marker.setTitle("Torre Eiffel");
+        marker.setPosition(new GeoPoint(-23.56834, -46.71717));
+        marker.setTitle("Instituto Butantã");
         mapView.getOverlays().add(marker);
 
         return rootView;
