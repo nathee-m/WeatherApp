@@ -11,10 +11,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.natalia.myapplication.MapsFragment;
 import com.natalia.myapplication.R;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
+
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
@@ -30,18 +27,20 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         switch (position) {
-            case 2: {
-                return new MapsFragment();
+            case 0: {
+                return PlaceholderFragment.newInstance(position + 1);
 
             }
-            default: {
-                return PlaceholderFragment.newInstance(position + 1);
+            case 1: {
+                return new MapsFragment();
             }
+            default:
+                return null;
         }
 
     }
 
-    @Nullable
+
     @Override
     public CharSequence getPageTitle(int position) {
         return mContext.getResources().getString(TAB_TITLES[position]);
