@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name"></string>
-    <string name="action_sobre">Sobre</string>
+    <string name="app_name">TWA</string>
+    <string name="name_int">THE WEATHER APP</string>
+    <string name="action_sobre">SOBRE</string>
     <!-- Strings used for fragments for navigation -->
     <string name="next">Próximo</string>
     <string name="previous">Anterior</string>
-    <string name="title_activity_tabs">TabsActivity</string>
+    <string name="title_activity_tabs">ABAS</string>
     <string name="tab_text_1">CIDADE</string>
     <string name="tab_text_2">MAPA</string>
     <string name="Sobre">Este aplicativo foi desenvolvido por Natália Diogo como parte da Atividade Prática Orientada (APO) da disciplina de Programação de Dispositivos Móveis, do curso de Análise e Desenvolvimento de Sistemas da UniparEAD.</string>

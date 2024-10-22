@@ -18,16 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/CorBranco"
-            app:titleTextColor="@color/corPreto">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:fontFamily="@font/jockey_one_regular"
-                android:text="THE WEATHER APP"
-                android:textColor="@color/corPreto"
-                android:textSize="24dp" />
+            app:titleTextColor="@color/corPreto"
+            app:title="@string/name_int">
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -50,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/CorAzulApp"
         android:src="@drawable/qr_24dp_ffffff"
         android:tint="@color/CorBranco" />
@@ -61,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="@color/CorAzulApp"
         android:src="@drawable/cloud_24dp"
         android:tint="@color/CorBranco" />

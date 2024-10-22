@@ -5,11 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+import com.natalia.myapplication.databinding.ActivityTabsBinding;
+import com.natalia.myapplication.ui.main.SectionsPagerAdapter;
 
 
 public class SobreActivity extends AppCompatActivity {
+
+    private ActivityTabsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
