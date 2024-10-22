@@ -38,6 +38,49 @@
             android:backgroundTint="@color/CorAzulApp" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/CorBranco"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/jockey_one_regular"
+            android:justificationMode="inter_word"
+            android:text="@string/Sobre"
+            android:textColor="@color/corPreto"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="400dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/CorBranco"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/jockey_one_regular"
+            android:justificationMode="inter_word"
+            android:text="@string/Sobre"
+            android:textColor="@color/corPreto"
+            android:textSize="18dp" />
+
+    </androidx.cardview.widget.CardView>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
