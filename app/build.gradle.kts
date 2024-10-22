@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.activity)
     testImplementation(libs.junit)
+    implementation ("org.osmdroid:osmdroid-android:6.1.20")
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     androidTestImplementation(libs.ext.junit)
