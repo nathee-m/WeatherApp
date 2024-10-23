@@ -14,12 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+
+import com.journeyapps.barcodescanner.CaptureActivity;
 import com.natalia.myapplication.ui.main.SectionsPagerAdapter;
 import com.natalia.myapplication.databinding.ActivityTabsBinding;
+
 
 public class TabsActivity extends AppCompatActivity {
 
     private ActivityTabsBinding binding;
+    private static final int REQUEST_CODE_SCAN = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +44,8 @@ public class TabsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
+                Intent intent = new Intent(TabsActivity.this, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE_SCAN);
             }
         });
 
@@ -55,8 +58,22 @@ public class TabsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE_SCAN) {
+            if (resultCode == RESULT_OK) {
+                String result = data.getStringExtra("SCAN_RESULT");
+                Snackbar.make(binding.getRoot(), "QRcode: " + result, Snackbar.LENGTH_LONG).show();
+            } else {
+                Snackbar.make(binding.getRoot(), "Cancelado", Snackbar.LENGTH_LONG).show();
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,6 +92,4 @@ public class TabsActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }
