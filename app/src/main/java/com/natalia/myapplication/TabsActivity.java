@@ -33,7 +33,7 @@ public class TabsActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = binding.viewPager;
+        ViewPager viewPager = binding.container;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
@@ -46,16 +46,6 @@ public class TabsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(TabsActivity.this, CaptureActivity.class);
                 startActivityForResult(intent, REQUEST_CODE_SCAN);
-            }
-        });
-
-        FloatingActionButton fabInicio = findViewById(R.id.fab2);
-        fabInicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TabsActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
     }

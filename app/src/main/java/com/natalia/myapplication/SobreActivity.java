@@ -26,7 +26,7 @@ public class SobreActivity extends AppCompatActivity {
         fabInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SobreActivity.this, MainActivity.class);
+                Intent intent = new Intent(SobreActivity.this, TabsActivity.class);
                 startActivity(intent);
                 finish();
             }
