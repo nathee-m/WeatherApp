@@ -33,7 +33,7 @@ public class MapsFragment extends Fragment {
 
         Marker marker = new Marker(mapView);
         marker.setPosition(new GeoPoint(-23.56834, -46.71717));
-        marker.setTitle("Instituto Butantã");
+        marker.setTitle("São Paulo");
         mapView.getOverlays().add(marker);
 
         return rootView;
