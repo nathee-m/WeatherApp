@@ -7,6 +7,7 @@ import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.ListFragment;
 
 import com.natalia.myapplication.MapsFragment;
 import com.natalia.myapplication.R;
@@ -29,15 +30,16 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0: {
                 return PlaceholderFragment.newInstance(position + 1);
-
             }
-            case 1: {
+            case 2: {
                 return new MapsFragment();
             }
-            default:
-                return null;
-        }
 
+            default: {
+                return new ListFragment();
+            }
+
+        }
     }
 
 
