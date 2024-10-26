@@ -57,7 +57,7 @@ public class TabsActivity extends AppCompatActivity {
                 String result = data.getStringExtra("SCAN_RESULT");
                 Snackbar.make(binding.getRoot(), "QRcode: " + result, Snackbar.LENGTH_LONG).show();
             } else {
-                Snackbar.make(binding.getRoot(), "Cancelado", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(binding.getRoot(), "Leitura QRcode cancelada", Snackbar.LENGTH_LONG).show();
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
