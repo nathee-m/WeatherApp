@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="corPreto">#FF000000</color>
+    <color name="CorBranco">#FFFFFFFF</color>
+    <color name="CorAzulApp">#595CFF</color>
+    <color name="CorAzulFundo">#DBE4EE</color>
+    <color name="CorAzulClique">#56EEF4</color>
+</resources>
