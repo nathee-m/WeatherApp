@@ -18,7 +18,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         TextView dataDiaSemana;
         TextView min;
         TextView max;
-        TextView description;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -26,7 +25,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             dataDiaSemana = itemView.findViewById(R.id.dateText);
             min = itemView.findViewById(R.id.minText);
             max = itemView.findViewById(R.id.maxText);
-            description = itemView.findViewById(R.id.descriptionText);
         }
     }
 
@@ -49,7 +47,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         Forecast itemPosition = listaDadosTempo.get(position);
 
         viewHolder.dataDiaSemana.setText(itemPosition.getDate() + " - " + itemPosition.getWeekday());
-        viewHolder.description.setText(itemPosition.getDescription());
         viewHolder.max.setText(itemPosition.getMax());
         viewHolder.min.setText(itemPosition.getMin());
     }
