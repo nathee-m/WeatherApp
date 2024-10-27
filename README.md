@@ -9,16 +9,27 @@ Temática: Desenvolvimento de Aplicações Android
 
 Estrutura do Projeto
 
-- Linguagem: Java
+- Linguagem:
+    - Java
+
 - Componentes Principais:
-   - 3 *Activities*: Tela principal, detalhes e Sobre.
-   - *Splash Screen*: Implementada com *Handler*.
-   - UI com duas abas:
-       - Com *Fragment* para exibir as previsões.
-       - Com um mapa interativo usando *OpenSourceMap*.
-   - Sobre: Informações sobre o aplicativo e o desenvolvedor.
-   - Lista de Previsões: Utilizando *RecyclerView* e *CardView*.
-   - *Floating Action Button*: um botão para retornar ao início e outro para escaneamento QRCode da cidade.
+   - Splash Screen:
+      - Tela inicial exibida por 3 segundos utilizando handler
+         
+   - TabBar:
+      - Primeira Aba: exibe a lista de previsões, consumindo dados da API HG Brasil
+      - Segunda Aba: Mapa com *OpenSourceMap*, apresentando um marcador fixo
+        
+   - Menu:
+      - Direciona para tela Sobre, com informações do aplicativo e do desenvolvedor
+        
+   - Floating Action Button:
+      - Um botão para retornar ao início do aplicativo
+      - Outro botão para escaneamento de QR Code
+        
+- Design:
+   - Telas desenvolvidas no Figma
+
 
 Contribuições
 
