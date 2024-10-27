@@ -4,38 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CorAzulFundo"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ListFragment">
 
-    <LinearLayout
-        android:id="@+id/ListTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card01"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="@color/CorBranco"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
 
-        <TextView
-            android:id="@+id/cityLabel"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_weight="0.5"
-            android:text="Cidade:"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/cityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_weight="1"
-            android:text="" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/cityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/jockey_one_regular"
+                android:text=""
+                android:textSize="40dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/ListTitle"
-        android:scrollbars="vertical" />
+            <TextView
+                android:id="@+id/tempNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/jockey_one_regular"
+                android:text=""
+                android:textSize="40dp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card01"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/CorBranco"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/card01"
+            android:layout_margin="30dp"
+            android:scrollbars="vertical"
+            app:cardCornerRadius="10dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>
 
