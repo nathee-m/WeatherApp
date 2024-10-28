@@ -28,7 +28,7 @@
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="@string/name_int"
                 android:textColor="@color/corPreto"
-                android:textSize="24dp" />
+                android:textSize="24sp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -36,21 +36,25 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/CorAzulApp" />
+            android:backgroundTint="@color/CorAzulApp"
+            app:tabBackground="@color/CorAzulApp"
+            app:tabSelectedTextColor="@color/CorAzulClique"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:tabTextColor="@color/CorBranco" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginRight="30dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/CorAzulApp"
         android:src="@drawable/qr_24dp_ffffff"

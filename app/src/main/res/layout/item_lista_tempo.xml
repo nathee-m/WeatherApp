@@ -24,6 +24,7 @@
                 android:layout_marginStart="60dp"
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="Seg"
+                android:textColor="@color/corPreto"
                 android:textSize="28sp" />
 
             <TextView
@@ -33,6 +34,7 @@
                 android:layout_marginStart="100dp"
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="25º"
+                android:textColor="@color/corPreto"
                 android:textSize="28sp" />
 
             <TextView
@@ -42,6 +44,7 @@
                 android:layout_marginStart="40dp"
                 android:fontFamily="@font/jockey_one_regular"
                 android:text="35º"
+                android:textColor="@color/corPreto"
                 android:textSize="28sp" />
 
         </LinearLayout>
