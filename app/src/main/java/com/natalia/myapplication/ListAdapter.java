@@ -19,14 +19,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         this.listaDadosTempo = lista;
     }
 
-    public void updateData(ArrayList<Forecast> newData) {
-        listaDadosTempo.clear();
-        for (int i = 0; i < newData.size() && i < 7; i++) {
-            listaDadosTempo.add(newData.get(i));
-        }
-        notifyDataSetChanged();
-    }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView dataDiaSemana;
         TextView min;
