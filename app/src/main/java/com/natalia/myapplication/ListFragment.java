@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -29,6 +30,7 @@ public class ListFragment extends Fragment {
     DadosTempo dados;
     TextView cidade;
     TextView tempAgora;
+    ImageView weatherImage;
 
     public ListFragment() {
         // Required empty public constructor
@@ -50,6 +52,7 @@ public class ListFragment extends Fragment {
 
         cidade = v.findViewById(R.id.cityText);
         tempAgora = v.findViewById(R.id.tempNow);
+        weatherImage = v.findViewById(R.id.imageNow);
 
         dados = new DadosTempo();
 
@@ -77,12 +80,33 @@ public class ListFragment extends Fragment {
                 cidade.setText(dados.getCidade());
                 tempAgora.setText(dados.getTempAgora() +"°");
 
+                String currentCondition = response.body().getResults().getConditionSlug();
+                int imageResource = getWeatherImage(currentCondition);
+                dados.setImage(currentCondition);
+                ImageView weatherImage = getView().findViewById(R.id.imageNow);
+                weatherImage.setImageResource(imageResource);
 
                 mAdapter = new ListAdapter(dados.getLista());
                 mRecyclerView.setAdapter(mAdapter);
                 mAdapter.notifyDataSetChanged();
             } else {
                 Log.e(TAG, "Resposta vazia");
+            }
+        }
+
+        private int getWeatherImage(String conditionSlug) {
+            switch (conditionSlug) {
+                case "storm": return R.drawable.storm;
+                case "snow": return R.drawable.snow;
+                case "hail": return R.drawable.hail;
+                case "rain": return R.drawable.rain;
+                case "fog": return R.drawable.fog;
+                case "clear_day": return R.drawable.clear_day;
+                case "clear_night": return R.drawable.clear_night;
+                case "cloud": return R.drawable.cloud;
+                case "cloudly_day": return R.drawable.cloudly_day;
+                case "cloudly_night": return R.drawable.cloudly_night;
+                default: return R.drawable.cloud;
             }
         }
 
