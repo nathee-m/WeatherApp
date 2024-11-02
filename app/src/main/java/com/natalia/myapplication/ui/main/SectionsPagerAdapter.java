@@ -26,21 +26,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
         switch (position) {
             case 0: {
-                return PlaceholderFragment.newInstance(position + 1);
-
+                return new ListFragment();
             }
             case 1: {
                 return new MapsFragment();
             }
             default:
-                return new ListFragment();
+                return null;
         }
-
     }
-
 
     @Override
     public CharSequence getPageTitle(int position) {
