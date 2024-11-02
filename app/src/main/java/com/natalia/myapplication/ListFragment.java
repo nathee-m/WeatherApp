@@ -28,6 +28,7 @@ public class ListFragment extends Fragment {
 
     DadosTempo dados;
     TextView cidade;
+    TextView tempAgora;
 
     public ListFragment() {
         // Required empty public constructor
@@ -48,6 +49,7 @@ public class ListFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         cidade = v.findViewById(R.id.cityText);
+        tempAgora = v.findViewById(R.id.tempNow);
 
         dados = new DadosTempo();
 
@@ -69,9 +71,11 @@ public class ListFragment extends Fragment {
         public void onResponse(Call<ApiPojo> call, Response<ApiPojo> response) {
             if (response.body() != null) {
                 dados.setCidade(response.body().getResults().getCityName());
+                dados.setTempAgora(String.valueOf(response.body().getResults().getTemp()));
                 dados.setLista(response.body().getResults().getForecast());
 
                 cidade.setText(dados.getCidade());
+                tempAgora.setText(dados.getTempAgora() +"°");
 
 
                 mAdapter = new ListAdapter(dados.getLista());

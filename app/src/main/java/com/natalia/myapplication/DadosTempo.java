@@ -10,6 +10,7 @@ import java.util.List;
 
 public class DadosTempo {
     private String cidade;
+    private String tempAgora;
     private ArrayList<Forecast> lista = new ArrayList<>();
 
     public String getCidade() {
@@ -18,6 +19,14 @@ public class DadosTempo {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public String getTempAgora() {
+        return tempAgora;
+    }
+
+    public void setTempAgora(String tempAgora) {
+        this.tempAgora = tempAgora;
     }
 
     public ArrayList<Forecast> getLista() {

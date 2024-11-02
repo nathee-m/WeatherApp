@@ -28,11 +28,23 @@
                 android:id="@+id/cityText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/jockey_one_regular"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/corPreto"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/tempNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/jockey_one_regular"
                 android:text=""
                 android:textColor="@color/corPreto"
-                android:textSize="40sp" />
+                android:textSize="55sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
