@@ -43,18 +43,13 @@ public class ListFragment extends Fragment {
         View v = inflater.inflate(R.layout.list_fragment, container, false);
 
         mRecyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        dados = new DadosTempo();
+        cidade = v.findViewById(R.id.cityText);
 
-        //Requisição, seta lista
+        dados = new DadosTempo();
 
         Retrofit client = new Retrofit.Builder()
                 .baseUrl("https://api.hgbrasil.com/")
@@ -62,15 +57,9 @@ public class ListFragment extends Fragment {
                 .build();
 
         ApiTempo httpRequest = client.create(ApiTempo.class);
-
         Call<ApiPojo> call = httpRequest.getInfTempo();
 
         call.enqueue(callback);
-
-        mAdapter = new ListAdapter(dados);
-        mRecyclerView.setAdapter(mAdapter);
-
-        cidade = v.findViewById(R.id.cityText);
 
         return v;
     }
@@ -78,19 +67,24 @@ public class ListFragment extends Fragment {
     private Callback<ApiPojo> callback = new Callback<ApiPojo>() {
         @Override
         public void onResponse(Call<ApiPojo> call, Response<ApiPojo> response) {
+            if (response.body() != null) {
+                dados.setCidade(response.body().getResults().getCityName());
+                dados.setLista(response.body().getResults().getForecast());
 
-            dados.setCidade(response.body().getResults().getCityName());
-            dados.setLista(response.body().getResults().getForecast());
+                cidade.setText(dados.getCidade());
 
-            cidade.setText(dados.getCidade());
 
-            mAdapter.notifyDataSetChanged();
+                mAdapter = new ListAdapter(dados.getLista());
+                mRecyclerView.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();
+            } else {
+                Log.e(TAG, "Resposta vazia");
+            }
         }
 
         @Override
         public void onFailure(Call<ApiPojo> call, Throwable t) {
-            Log.e(TAG, "Falha no Retrofit: "+ t.toString());
+            Log.e(TAG, "Falha no Retrofit: " + t.toString());
         }
     };
-
 }
