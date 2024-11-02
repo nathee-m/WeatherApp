@@ -13,24 +13,31 @@ import java.util.ArrayList;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    private ArrayList<Forecast> listaDadosTempo;
 
+    public ListAdapter(ArrayList<Forecast> lista) {
+        this.listaDadosTempo = lista;
+    }
+
+    public void updateData(ArrayList<Forecast> newData) {
+        listaDadosTempo.clear();
+        for (int i = 0; i < newData.size() && i < 7; i++) {
+            listaDadosTempo.add(newData.get(i));
+        }
+        notifyDataSetChanged();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView dataDiaSemana;
         TextView min;
         TextView max;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             dataDiaSemana = itemView.findViewById(R.id.dateText);
             min = itemView.findViewById(R.id.minText);
             max = itemView.findViewById(R.id.maxText);
         }
-    }
-
-    private ArrayList<Forecast> listaDadosTempo;
-    public ListAdapter(DadosTempo dados) {
-        listaDadosTempo = dados.getLista();
     }
 
     @NonNull
@@ -38,22 +45,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.item_lista_tempo, viewGroup, false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         Forecast itemPosition = listaDadosTempo.get(position);
-
         viewHolder.dataDiaSemana.setText(itemPosition.getWeekday());
-        viewHolder.max.setText(itemPosition.getMax());
-        viewHolder.min.setText(itemPosition.getMin());
+        viewHolder.max.setText(String.valueOf(itemPosition.getMax())+ "°");
+        viewHolder.min.setText(String.valueOf(itemPosition.getMin())+ "°");
     }
 
     @Override
     public int getItemCount() {
-        return listaDadosTempo.size();
+        return Math.min(listaDadosTempo.size(), 7);
     }
-
 }
