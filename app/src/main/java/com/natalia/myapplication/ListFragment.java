@@ -20,9 +20,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ListFragment extends Fragment {
 
     private static final String TAG = "ListFragment";
@@ -33,7 +30,7 @@ public class ListFragment extends Fragment {
     ImageView weatherImage;
 
     public ListFragment() {
-        // Required empty public constructor
+
     }
 
     private RecyclerView mRecyclerView;
