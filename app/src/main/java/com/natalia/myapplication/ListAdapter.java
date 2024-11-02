@@ -51,7 +51,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         Forecast itemPosition = listaDadosTempo.get(position);
-        viewHolder.dataDiaSemana.setText(itemPosition.getWeekday());
+        viewHolder.dataDiaSemana.setText(itemPosition.getDate() + " - " + itemPosition.getWeekday());
         viewHolder.max.setText(String.valueOf(itemPosition.getMax())+ "°");
         viewHolder.min.setText(String.valueOf(itemPosition.getMin())+ "°");
     }
