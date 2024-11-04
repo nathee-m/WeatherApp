@@ -93,17 +93,39 @@ public class ListFragment extends Fragment {
 
         private int getWeatherImage(String conditionSlug) {
             switch (conditionSlug) {
-                case "storm": return R.drawable.storm;
-                case "snow": return R.drawable.snow;
-                case "hail": return R.drawable.hail;
-                case "rain": return R.drawable.rain;
-                case "fog": return R.drawable.fog;
-                case "clear_day": return R.drawable.clear_day;
-                case "clear_night": return R.drawable.clear_night;
-                case "cloud": return R.drawable.cloud;
-                case "cloudly_day": return R.drawable.cloudly_day;
-                case "cloudly_night": return R.drawable.cloudly_night;
-                default: return R.drawable.cloud;
+                case "storm": {
+                    return R.drawable.storm;
+                }
+                case "snow": {
+                    return R.drawable.snow;
+                }
+                case "hail": {
+                    return R.drawable.hail;
+                }
+                case "rain": {
+                    return R.drawable.rain;
+                }
+                case "fog": {
+                    return R.drawable.fog;
+                }
+                case "clear_day": {
+                    return R.drawable.clear_day;
+                }
+                case "clear_night": {
+                    return R.drawable.clear_night;
+                }
+                case "cloud": {
+                    return R.drawable.cloud;
+                }
+                case "cloudly_day": {
+                    return R.drawable.cloudly_day;
+                }
+                case "cloudly_night": {
+                    return R.drawable.cloudly_night;
+                }
+                default: {
+                    return R.drawable.cloud;
+                }
             }
         }
 
