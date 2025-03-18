@@ -1,0 +1,55 @@
+package com.natalia.myapplication;
+
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class TabsActivityTest {
+
+    @Rule
+    public ActivityTestRule<TabsActivity> activityRule =
+            new ActivityTestRule<>(TabsActivity.class);
+
+    @Test
+    public void testWeatherDataDisplay() {
+
+        Espresso.onView(withId(R.id.cityText)).check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.tempNow)).check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.my_recycler_view)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testWeatherImageLoading() {
+
+        ViewInteraction weatherImageView = Espresso.onView(withId(R.id.imageNow));
+        weatherImageView.check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testNavigationToMapScreen() {
+
+        Espresso.onView(withText(R.string.tab_text_2)).perform(ViewActions.click());
+        Espresso.onView(withId(R.id.map)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void testButtonClick() {
+
+        Espresso.onView(withId(R.id.fab)).perform(ViewActions.click());
+    }
+
+}
