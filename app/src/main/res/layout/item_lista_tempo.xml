@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Seg"
+        android:text="02/11 - Seg"
         android:textAllCaps="true"
         android:textColor="@color/corPreto"
         android:textSize="22sp" />
