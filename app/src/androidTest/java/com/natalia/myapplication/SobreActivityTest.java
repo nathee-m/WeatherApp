@@ -16,7 +16,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-@LargeTest
 public class SobreActivityTest {
 
     @Rule
@@ -28,7 +27,6 @@ public class SobreActivityTest {
         Espresso.onView(withId(R.id.toolbar)).perform(ViewActions.click());
         Espresso.onView(withId(R.id.about)).check(ViewAssertions.matches(isDisplayed()));
     }
-
 
     @Test
     public void testButtonSobreActivity() {
