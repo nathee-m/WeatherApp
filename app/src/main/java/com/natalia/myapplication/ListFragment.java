@@ -135,6 +135,7 @@ public class ListFragment extends Fragment {
         }
     };
 
+    //utilizado na classe ApiTempoTest
     public void fetchDataFromApi() {
     }
 }
