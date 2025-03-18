@@ -134,4 +134,7 @@ public class ListFragment extends Fragment {
             Log.e(TAG, "Falha no Retrofit: " + t.toString());
         }
     };
+
+    public void fetchDataFromApi() {
+    }
 }
