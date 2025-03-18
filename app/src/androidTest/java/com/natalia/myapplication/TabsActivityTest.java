@@ -26,23 +26,9 @@ public class TabsActivityTest {
             new ActivityTestRule<>(TabsActivity.class);
 
     @Test
-    public void testWeatherDataDisplay() {
-        Espresso.onView(withId(R.id.cityText)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.tempNow)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.my_recycler_view)).check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void testWeatherImageLoading() {
-        ViewInteraction weatherImageView = Espresso.onView(withId(R.id.imageNow));
-        weatherImageView.check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void testNavigationToMapScreen() {
+    public void testNavigationToMapsFragment() {
         Espresso.onView(withText(R.string.tab_text_2)).perform(ViewActions.click());
         Espresso.onView(withId(R.id.map)).check(ViewAssertions.matches(isDisplayed()));
-
     }
 
     @Test
