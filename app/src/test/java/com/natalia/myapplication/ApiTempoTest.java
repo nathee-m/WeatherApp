@@ -53,7 +53,7 @@ public class ApiTempoTest {
         doAnswer(invocation -> {
             Callback<ApiPojo> callback = invocation.getArgument(0);
             callback.onResponse(mockCall, Response.success(mockResponse));
-            return null; // Como é um método void, retorna null
+            return null;
         }).when(mockCall).enqueue(any(Callback.class));
 
         listFragment.fetchDataFromApi();
