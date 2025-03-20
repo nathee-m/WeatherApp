@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.activity)
+    implementation(libs.espresso.contrib)
+    implementation(libs.uiautomator)
     testImplementation(libs.junit)
 
     implementation ("org.osmdroid:osmdroid-android:6.1.20")
@@ -58,10 +60,11 @@ dependencies {
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
     testImplementation ("org.mockito:mockito-core:3.+")
 
-
     androidTestImplementation ("androidx.test.ext:junit:1.2.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     androidTestImplementation("androidx.test.espresso:espresso-intents:3.6.1")
     androidTestImplementation("androidx.test:runner:1.6.1")
     androidTestImplementation("androidx.test:rules:1.6.1")
+    androidTestImplementation ("org.mockito:mockito-core:3.+")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0-alpha03")
 }
