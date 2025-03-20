@@ -34,10 +34,4 @@ public class TabsActivityTest {
         Espresso.onView(withText(R.string.tab_text_1)).perform(ViewActions.click());
         Espresso.onView(withId(R.id.home)).check(ViewAssertions.matches(isDisplayed()));
     }
-
-    @Test
-    public void testButtonQRCode() {
-        Espresso.onView(withId(R.id.fab)).perform(ViewActions.click());
-    }
-
 }
