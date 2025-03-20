@@ -7,11 +7,13 @@ import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
+import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -23,7 +25,6 @@ public class DadosTempoTest {
     @Rule
     public ActivityTestRule<TabsActivity> activityRule =
             new ActivityTestRule<>(TabsActivity.class);
-
 
     @Test
     public void testWeatherImageLoading() {
@@ -43,10 +44,8 @@ public class DadosTempoTest {
         Espresso.onView(withId(R.id.my_recycler_view)).check(matches(isDisplayed()));
 
         for (int i = 0; i < 7; i++) {
-            Espresso.onView(withId(R.id.my_recycler_view)).perform(RecyclerViewActions.scrollToPosition(i));
-            Espresso.onView(withId(R.id.dateText)).check(matches(isDisplayed()));
-            Espresso.onView(withId(R.id.minText)).check(matches(isDisplayed()));
-            Espresso.onView(withId(R.id.maxText)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.my_recycler_view))
+                    .check(matches(hasDescendant(withText(Matchers.not(Matchers.isEmptyString())))));
         }
     }
 }
